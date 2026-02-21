@@ -639,7 +639,7 @@
     <div class="video-label">⭐ Fresh from our stall — a customer shares their experience</div>
     <div class="video-frame">
       <video controls width="100%">
-        <source src="351afba1-0cdd-491d-8188-acb0edb28934.mov" type="video/mp4">
+        <source src="customer-review.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>
@@ -673,23 +673,24 @@
 
     <!-- OPTION A: ORDER FORM -->
     <div class="order-form-box animate-on-scroll">
-      <h3>📋 Send us an Order Request</h3>
-      <p class="form-sub">Fill in your details and we'll confirm your order within a few hours. Perfect for planned and bulk orders.</p>
-      <!-- Replace YOUR_FORM_ID below after signing up free at formspree.io -->
-      <form action="https://formspree.io/f/mkovqoyb" method="POST">
+
+      <!-- FORM VIEW -->
+      <div id="formView">
+        <h3>📋 Send us an Order Request</h3>
+        <p class="form-sub">Fill in your details and we'll confirm your order within a few hours. Perfect for planned and bulk orders.</p>
         <div class="form-row">
           <div class="form-group">
             <label for="name">Your Name *</label>
-            <input type="text" id="name" name="name" placeholder="e.g. Priya Sharma" required />
+            <input type="text" id="name" placeholder="e.g. Priya Sharma" required />
           </div>
           <div class="form-group">
             <label for="phone">WhatsApp Number *</label>
-            <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required />
+            <input type="tel" id="phone" placeholder="+91 98765 43210" required />
           </div>
         </div>
         <div class="form-group">
           <label for="product">What would you like to order? *</label>
-          <select id="product" name="product" required>
+          <select id="product" required>
             <option value="" disabled selected>Select a product</option>
             <option>Dark Chocolates</option>
             <option>Milk &amp; White Chocolates</option>
@@ -708,16 +709,16 @@
         <div class="form-row">
           <div class="form-group">
             <label for="quantity">Quantity / Serving Size</label>
-            <input type="text" id="quantity" name="quantity" placeholder="e.g. 1 box, 12 pieces" />
+            <input type="text" id="quantity" placeholder="e.g. 1 box, 12 pieces" />
           </div>
           <div class="form-group">
             <label for="date">Needed By Date *</label>
-            <input type="date" id="date" name="date" required />
+            <input type="date" id="date" required />
           </div>
         </div>
         <div class="form-group">
           <label for="dietary">Dietary Requirements</label>
-          <select id="dietary" name="dietary">
+          <select id="dietary">
             <option value="Regular">Regular (standard recipe)</option>
             <option value="Sugar-free (Monk Fruit)">Sugar-free — Monk fruit</option>
             <option value="Gluten-free">Gluten-free</option>
@@ -727,14 +728,30 @@
         </div>
         <div class="form-group">
           <label for="notes">Any special requests or notes?</label>
-          <textarea id="notes" name="notes" placeholder="Custom flavour, gifting message, delivery area, allergies..."></textarea>
+          <textarea id="notes" placeholder="Custom flavour, gifting message, delivery area, allergies..."></textarea>
         </div>
-        <button type="submit" class="form-submit">Send My Order Request 🍰</button>
+        <button onclick="submitOrder()" class="form-submit" id="submitBtn">Send My Order Request 🍰</button>
         <p class="form-note">We'll confirm via WhatsApp within a few hours · Please order at least 24–48 hrs in advance</p>
-      </form>
+      </div>
+
+      <!-- SUCCESS VIEW -->
+      <div id="successView" style="display:none; text-align:center; padding: 2rem 1rem;">
+        <div style="font-size:4rem; margin-bottom:1rem;">🎉</div>
+        <h3 style="font-family:'Playfair Display',serif; color:var(--brown); margin-bottom:0.8rem;">Order Request Received!</h3>
+        <p style="color:var(--brown-light); font-size:0.95rem; line-height:1.7; margin-bottom:1.5rem;">
+          Thank you! We've got your order and will confirm via WhatsApp within a few hours. We look forward to baking for you!
+        </p>
+        <a href="https://wa.me/919771017500" target="_blank" class="btn-primary" style="display:inline-block;">
+          Chat with us on WhatsApp →
+        </a>
+        <p style="margin-top:1.2rem;">
+          <a href="#" onclick="resetForm(); return false;" style="color:var(--pink); font-size:0.85rem;">Place another order</a>
+        </p>
+      </div>
+
     </div>
 
-    <!-- OPTION B: QUICK CONTACT -->
+        <!-- OPTION B: QUICK CONTACT -->
     <div class="order-quick-box animate-on-scroll">
       <div>
         <h3>💬 Prefer to chat directly?</h3>
@@ -785,7 +802,7 @@
 </footer>
 
 <script>
-  // Scroll animations
+  // ── Scroll animations ──
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
       if (entry.isIntersecting) {
@@ -795,13 +812,72 @@
   }, { threshold: 0.1 });
   document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
 
-  // Menu filter
+  // ── Menu filter ──
   function filterMenu(cat, btn) {
     document.querySelectorAll('.menu-tab').forEach(t => t.classList.remove('active'));
     btn.classList.add('active');
     document.querySelectorAll('.menu-card').forEach(card => {
       card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
     });
+  }
+
+  // ── Order Form ──
+  // Paste your Google Apps Script Web App URL here after deploying
+  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyT_zJZYNHEXKRlgO1Dl_QN45nK6udRoTQfNHteAWYP4A9btlO0TVrgAbvtc4wO2Hp0Jg/exec';
+
+  async function submitOrder() {
+    const name     = document.getElementById('name').value.trim();
+    const phone    = document.getElementById('phone').value.trim();
+    const product  = document.getElementById('product').value;
+    const quantity = document.getElementById('quantity').value.trim();
+    const date     = document.getElementById('date').value;
+    const dietary  = document.getElementById('dietary').value;
+    const notes    = document.getElementById('notes').value.trim();
+
+    if (!name || !phone || !product || !date) {
+      alert('Please fill in all required fields (Name, WhatsApp Number, Product, and Date).');
+      return;
+    }
+
+    const btn = document.getElementById('submitBtn');
+    btn.textContent = 'Sending... please wait';
+    btn.disabled = true;
+    btn.style.opacity = '0.7';
+
+    const payload = { name, phone, product, quantity, date, dietary, notes };
+
+    try {
+      await fetch(APPS_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      showSuccess();
+    } catch (error) {
+      btn.textContent = 'Send My Order Request';
+      btn.disabled = false;
+      btn.style.opacity = '1';
+      alert('Something went wrong. Please reach us directly on WhatsApp!');
+    }
+  }
+
+  function showSuccess() {
+    document.getElementById('formView').style.display = 'none';
+    document.getElementById('successView').style.display = 'block';
+  }
+
+  function resetForm() {
+    ['name','phone','quantity','notes'].forEach(id => document.getElementById(id).value = '');
+    document.getElementById('product').selectedIndex = 0;
+    document.getElementById('dietary').selectedIndex = 0;
+    document.getElementById('date').value = '';
+    const btn = document.getElementById('submitBtn');
+    btn.textContent = 'Send My Order Request';
+    btn.disabled = false;
+    btn.style.opacity = '1';
+    document.getElementById('successView').style.display = 'none';
+    document.getElementById('formView').style.display = 'block';
   }
 </script>
 
