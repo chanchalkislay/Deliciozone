@@ -15,255 +15,96 @@
       --cream: #FFF9F4;
       --brown: #5C2E0A;
       --brown-light: #8B5030;
-      --white: #FFFFFF;
-      --text: #2d1a10;
+      --green: #25D366;
+      --green-dark: #1da851;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--cream);
-      color: var(--text);
-      overflow-x: hidden;
-    }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--brown); overflow-x: hidden; }
 
-    /* ===== NAVBAR ===== */
+    /* ── NAVBAR ── */
     nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      background: rgba(255,249,244,0.94);
-      backdrop-filter: blur(12px);
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,249,244,0.95); backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--pink-mid);
-      padding: 0 5%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 68px;
+      padding: 0 5%; display: flex; align-items: center; justify-content: space-between; height: 68px;
     }
-    .nav-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--pink-dark);
-    }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--pink-dark); }
     .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a {
-      text-decoration: none;
-      color: var(--brown-light);
-      font-size: 0.88rem;
-      font-weight: 500;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
+    .nav-links a { text-decoration: none; color: var(--brown-light); font-size: 0.88rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
     .nav-links a:hover { color: var(--pink-dark); }
-    .nav-order {
-      background: var(--pink);
-      color: white;
-      padding: 0.5rem 1.4rem;
-      border-radius: 50px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.2s;
-    }
+    .nav-order { background: var(--pink); color: white; padding: 0.5rem 1.4rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600; text-decoration: none; transition: background 0.2s, transform 0.2s; }
     .nav-order:hover { background: var(--pink-deep); transform: translateY(-1px); }
 
-    /* ===== HERO ===== */
+    /* ── HERO ── */
     .hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      padding: 100px 5% 60px;
-      position: relative;
-      overflow: hidden;
+      min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr;
+      align-items: center; padding: 100px 5% 60px; position: relative; overflow: hidden;
     }
     .hero::before {
-      content: '';
-      position: absolute;
-      top: -100px; right: -100px;
+      content: ''; position: absolute; top: -100px; right: -100px;
       width: 700px; height: 700px;
       background: radial-gradient(circle, #fce4ec 0%, transparent 70%);
-      border-radius: 50%;
-      z-index: 0;
+      border-radius: 50%; z-index: 0;
     }
     .hero::after {
-      content: '';
-      position: absolute;
-      bottom: -80px; left: -80px;
+      content: ''; position: absolute; bottom: -80px; left: -80px;
       width: 400px; height: 400px;
       background: radial-gradient(circle, #fff3e0 0%, transparent 70%);
-      border-radius: 50%;
-      z-index: 0;
+      border-radius: 50%; z-index: 0;
     }
     .hero-text { position: relative; z-index: 1; animation: fadeUp 0.8s ease forwards; }
     .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: var(--pink-light);
-      color: var(--pink-deep);
-      padding: 0.4rem 1rem;
-      border-radius: 50px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--pink-light); color: var(--pink-deep);
+      padding: 0.4rem 1rem; border-radius: 50px;
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.5rem;
     }
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(3rem, 5vw, 5.5rem);
-      line-height: 1.05;
-      font-weight: 900;
-      color: var(--brown);
-      margin-bottom: 1.2rem;
-    }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 5vw, 5.5rem); line-height: 1.05; font-weight: 900; color: var(--brown); margin-bottom: 1.2rem; }
     .hero h1 em { font-style: italic; color: var(--pink-dark); }
-    .hero-desc {
-      font-size: 1.05rem;
-      line-height: 1.75;
-      color: var(--brown-light);
-      max-width: 480px;
-      margin-bottom: 2rem;
-    }
+    .hero-desc { font-size: 1.05rem; line-height: 1.75; color: var(--brown-light); max-width: 480px; margin-bottom: 2rem; }
     .hero-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2.5rem; }
-    .tag {
-      background: white;
-      border: 1.5px solid var(--pink-mid);
-      color: var(--pink-deep);
-      padding: 0.3rem 0.9rem;
-      border-radius: 50px;
-      font-size: 0.8rem;
-      font-weight: 500;
-    }
+    .tag { background: white; border: 1.5px solid var(--pink-mid); color: var(--pink-deep); padding: 0.3rem 0.9rem; border-radius: 50px; font-size: 0.8rem; font-weight: 500; }
     .hero-cta { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
-    .btn-primary {
-      background: var(--pink);
-      color: white;
-      padding: 0.85rem 2rem;
-      border-radius: 50px;
-      font-size: 1rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 4px 20px rgba(240,98,146,0.35);
-    }
+    .btn-primary { background: var(--pink); color: white; padding: 0.85rem 2rem; border-radius: 50px; font-size: 1rem; font-weight: 600; text-decoration: none; transition: background 0.2s, transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 20px rgba(240,98,146,0.35); }
     .btn-primary:hover { background: var(--pink-deep); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(240,98,146,0.45); }
-    .btn-secondary {
-      color: var(--brown);
-      font-size: 0.95rem;
-      font-weight: 500;
-      text-decoration: none;
-      transition: letter-spacing 0.2s;
-    }
+    .btn-secondary { color: var(--brown); font-size: 0.95rem; font-weight: 500; text-decoration: none; transition: letter-spacing 0.2s; }
     .btn-secondary:hover { letter-spacing: 0.03em; }
-    .hero-visual {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      animation: fadeUp 1s 0.2s ease both;
-    }
+    .hero-visual { position: relative; z-index: 1; display: flex; justify-content: center; align-items: center; animation: fadeUp 1s 0.2s ease both; }
     .hero-logo-wrap { position: relative; }
-    .hero-logo-wrap img {
-      width: min(360px, 90%);
-      filter: drop-shadow(0 20px 60px rgba(240,98,146,0.35));
-      animation: float 4s ease-in-out infinite;
-    }
-    .floating-chip {
-      position: absolute;
-      background: white;
-      border-radius: 12px;
-      padding: 0.6rem 1rem;
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--brown);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-      white-space: nowrap;
-    }
+    .hero-logo-wrap img { width: min(360px, 90%); filter: drop-shadow(0 20px 60px rgba(240,98,146,0.35)); animation: float 4s ease-in-out infinite; }
+    .floating-chip { position: absolute; background: white; border-radius: 12px; padding: 0.6rem 1rem; font-size: 0.78rem; font-weight: 600; color: var(--brown); box-shadow: 0 8px 30px rgba(0,0,0,0.1); white-space: nowrap; }
     .chip1 { top: 10px; left: -20px; animation: floatChip 3.5s 0s ease-in-out infinite; }
     .chip2 { bottom: 50px; right: -10px; animation: floatChip 3.5s 0.6s ease-in-out infinite; }
     .chip3 { top: 45%; left: -55px; animation: floatChip 3.5s 1.2s ease-in-out infinite; }
 
-    /* ===== STATS ===== */
-    .stats {
-      background: var(--pink-dark);
-      color: white;
-      padding: 2rem 5%;
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-    }
+    /* ── STATS ── */
+    .stats { background: var(--pink-dark); color: white; padding: 2rem 5%; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 1.5rem; }
     .stat { text-align: center; }
     .stat-num { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; line-height: 1; }
     .stat-label { font-size: 0.78rem; opacity: 0.85; margin-top: 0.3rem; letter-spacing: 0.06em; text-transform: uppercase; }
 
-    /* ===== SECTION COMMONS ===== */
+    /* ── SECTION COMMONS ── */
     section { padding: 80px 5%; }
-    .section-label {
-      display: inline-block;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--pink);
-      margin-bottom: 0.8rem;
-    }
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      font-weight: 700;
-      color: var(--brown);
-      margin-bottom: 1rem;
-      line-height: 1.15;
-    }
+    .section-label { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--pink); margin-bottom: 0.8rem; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 700; color: var(--brown); margin-bottom: 1rem; line-height: 1.15; }
     .section-title em { font-style: italic; color: var(--pink-dark); }
     .section-sub { font-size: 1rem; color: var(--brown-light); line-height: 1.7; max-width: 520px; }
 
-    /* ===== SPECIALTIES ===== */
+    /* ── SPECIALTIES ── */
     .specialties { background: white; }
     .specialties-header { text-align: center; margin-bottom: 3.5rem; }
     .specialties-header .section-sub { margin: 0 auto; }
-    .spec-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-    }
-    .spec-card {
-      background: var(--cream);
-      border-radius: 20px;
-      padding: 2rem;
-      border: 1.5px solid transparent;
-      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
-    }
-    .spec-card:hover {
-      border-color: var(--pink-mid);
-      transform: translateY(-4px);
-      box-shadow: 0 16px 40px rgba(240,98,146,0.12);
-    }
+    .spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+    .spec-card { background: var(--cream); border-radius: 20px; padding: 2rem; border: 1.5px solid transparent; transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s; }
+    .spec-card:hover { border-color: var(--pink-mid); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(240,98,146,0.12); }
     .spec-icon { font-size: 2.2rem; margin-bottom: 1rem; display: block; }
     .spec-card h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--brown); margin-bottom: 0.6rem; }
     .spec-card p { font-size: 0.88rem; color: var(--brown-light); line-height: 1.65; }
-    .spec-highlight {
-      display: inline-block;
-      margin-top: 0.8rem;
-      background: var(--pink-light);
-      color: var(--pink-deep);
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      padding: 0.25rem 0.7rem;
-      border-radius: 50px;
-    }
+    .spec-highlight { display: inline-block; margin-top: 0.8rem; background: var(--pink-light); color: var(--pink-deep); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.25rem 0.7rem; border-radius: 50px; }
 
-    /* ===== MENU ===== */
+    /* ── MENU ── */
     .menu-section {
       background-color: var(--pink-light);
       background-image:
@@ -272,49 +113,39 @@
     }
     .menu-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem; }
     .menu-tabs { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
-    .menu-tab {
-      padding: 0.5rem 1.2rem;
-      border-radius: 50px;
-      border: 1.5px solid var(--pink-mid);
-      background: white;
-      color: var(--brown-light);
-      font-size: 0.85rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.2s;
-      font-family: 'DM Sans', sans-serif;
-    }
+    .menu-tab { padding: 0.5rem 1.2rem; border-radius: 50px; border: 1.5px solid var(--pink-mid); background: white; color: var(--brown-light); font-size: 0.85rem; font-weight: 500; cursor: pointer; transition: all 0.2s; font-family: 'DM Sans', sans-serif; }
     .menu-tab.active, .menu-tab:hover { background: var(--pink); color: white; border-color: var(--pink); }
     .menu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 1.5rem; }
-    .menu-card {
-      background: white;
-      border-radius: 20px;
-      overflow: hidden;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
+    .menu-card { background: white; border-radius: 20px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; display: flex; flex-direction: column; }
     .menu-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(240,98,146,0.18); }
-    .menu-card-img {
-      height: 150px;
-      background: var(--pink-light);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 4rem;
-    }
-    .menu-card-body { padding: 1.2rem; }
+    .menu-card-img { height: 150px; background: var(--pink-light); display: flex; align-items: center; justify-content: center; font-size: 4rem; }
+    .menu-card-body { padding: 1.2rem; flex: 1; display: flex; flex-direction: column; }
     .menu-card-badges { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
     .badge { font-size: 0.63rem; font-weight: 700; letter-spacing: 0.05em; padding: 0.18rem 0.5rem; border-radius: 50px; text-transform: uppercase; }
     .badge-veg { background: #E8F5E9; color: #2E7D32; }
-    .badge-gf { background: #FFF3E0; color: #E65100; }
-    .badge-sf { background: #F3E5F5; color: #6A1B9A; }
-    .badge-wf { background: #E3F2FD; color: #1565C0; }
-    .badge-nf { background: #FBE9E7; color: #BF360C; }
+    .badge-gf  { background: #FFF3E0; color: #E65100; }
+    .badge-sf  { background: #F3E5F5; color: #6A1B9A; }
+    .badge-wf  { background: #E3F2FD; color: #1565C0; }
+    .badge-nf  { background: #FBE9E7; color: #BF360C; }
     .menu-card-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--brown); margin-bottom: 0.3rem; }
-    .menu-card-desc { font-size: 0.82rem; color: var(--brown-light); line-height: 1.5; }
+    .menu-card-desc { font-size: 0.82rem; color: var(--brown-light); line-height: 1.5; flex: 1; margin-bottom: 1rem; }
 
-    /* ===== ABOUT ===== */
+    /* WhatsApp per-product button */
+    .wa-product-btn {
+      display: flex; align-items: center; justify-content: center; gap: 0.45rem;
+      background: var(--green); color: white;
+      padding: 0.55rem 1rem; border-radius: 50px;
+      font-size: 0.8rem; font-weight: 600; text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+      margin-top: auto;
+    }
+    .wa-product-btn:hover { background: var(--green-dark); transform: translateY(-1px); }
+    .wa-product-btn svg { flex-shrink: 0; }
+
+    /* ── ABOUT ── */
     .about-section { background: white; }
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .about-text .section-sub { margin-bottom: 1.5rem; }
     .pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
     .pillar { padding: 1.2rem; border-radius: 16px; border: 1.5px solid var(--pink-light); }
     .pillar-icon { font-size: 1.5rem; margin-bottom: 0.4rem; }
@@ -327,51 +158,138 @@
     .about-fact .big { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; color: var(--pink-dark); line-height: 1; }
     .about-fact small { display: block; font-size: 0.77rem; color: var(--brown-light); margin-top: 0.4rem; line-height: 1.4; }
 
-    /* ===== TESTIMONIALS ===== */
+    /* ── TESTIMONIALS ── */
     .testimonials { background: var(--cream); text-align: center; }
     .testimonials .section-sub { margin: 0 auto 3rem; }
+    .video-review-wrap { max-width: 620px; margin: 0 auto 3.5rem; }
+    .video-label { display: inline-block; background: var(--pink-light); color: var(--pink-deep); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.04em; padding: 0.4rem 1.1rem; border-radius: 50px; margin-bottom: 1.2rem; }
+    .video-frame { border-radius: 20px; overflow: hidden; border: 4px solid var(--pink-mid); box-shadow: 0 0 0 6px var(--pink-light), 0 20px 60px rgba(240,98,146,0.25); }
+    .video-frame video { display: block; width: 100%; background: var(--brown); }
     .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; text-align: left; }
     .testi-card { background: white; border-radius: 20px; padding: 2rem; border: 1.5px solid var(--pink-light); }
     .stars { color: #FFB300; font-size: 1.1rem; margin-bottom: 1rem; }
     .testi-card blockquote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.05rem; color: var(--brown); line-height: 1.65; margin-bottom: 1rem; }
     .testi-author { font-size: 0.85rem; font-weight: 600; color: var(--pink-dark); }
 
-    /* ===== ORDER ===== */
-    .order-section { background: var(--pink-dark); color: white; text-align: center; padding: 80px 5%; }
+    /* ── ORDER SECTION ── */
+    .order-section { background: var(--pink-dark); padding: 80px 5%; }
     .order-section .section-label { color: var(--pink-light); }
     .order-section .section-title { color: white; }
     .order-section .section-title em { color: var(--pink-light); }
-    .order-section .section-sub { color: rgba(255,255,255,0.8); margin: 0 auto 2.5rem; }
-    .order-channels { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
-    .channel-btn {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      padding: 0.9rem 1.8rem;
-      border-radius: 50px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.2s;
-      font-family: 'DM Sans', sans-serif;
-    }
-    .channel-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
-    .ch-whatsapp { background: #25D366; color: white; }
-    .ch-instagram { background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: white; }
-    .ch-phone { background: white; color: var(--pink-dark); }
-    .order-note { font-size: 0.85rem; opacity: 0.7; }
+    .order-section .section-sub { color: rgba(255,255,255,0.8); margin-bottom: 3rem; }
 
-    /* ===== FOOTER ===== */
-    footer {
-      background: var(--brown);
-      color: rgba(255,255,255,0.8);
-      padding: 3rem 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1.5rem;
+    .order-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
     }
+
+    /* Option A – Order Form */
+    .order-form-box {
+      background: white;
+      border-radius: 24px;
+      padding: 2.5rem;
+    }
+    .order-form-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--brown);
+      margin-bottom: 0.4rem;
+    }
+    .order-form-box .form-sub {
+      font-size: 0.88rem;
+      color: var(--brown-light);
+      margin-bottom: 1.8rem;
+      line-height: 1.5;
+    }
+    .form-group { margin-bottom: 1.1rem; }
+    .form-group label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--brown); margin-bottom: 0.35rem; letter-spacing: 0.03em; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1.5px solid var(--pink-mid);
+      border-radius: 12px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      color: var(--brown);
+      background: var(--cream);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--pink);
+      box-shadow: 0 0 0 3px rgba(240,98,146,0.15);
+    }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-submit {
+      width: 100%;
+      background: var(--pink);
+      color: white;
+      padding: 0.9rem;
+      border: none;
+      border-radius: 50px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      margin-top: 0.5rem;
+      letter-spacing: 0.02em;
+    }
+    .form-submit:hover { background: var(--pink-deep); transform: translateY(-1px); }
+    .form-note { font-size: 0.75rem; color: var(--brown-light); text-align: center; margin-top: 0.8rem; }
+
+    /* Option B – Quick Order panel */
+    .order-quick-box { display: flex; flex-direction: column; gap: 1.5rem; }
+    .order-quick-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: white;
+      margin-bottom: 0.3rem;
+    }
+    .order-quick-box .quick-sub { font-size: 0.9rem; color: rgba(255,255,255,0.75); line-height: 1.6; margin-bottom: 0.5rem; }
+
+    .quick-btn {
+      display: flex; align-items: center; gap: 0.85rem;
+      padding: 1.1rem 1.5rem; border-radius: 16px;
+      font-size: 0.95rem; font-weight: 600; text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .quick-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+    .quick-btn-label { font-size: 0.75rem; font-weight: 400; opacity: 0.85; display: block; margin-top: 0.1rem; }
+    .qb-whatsapp { background: #25D366; color: white; }
+    .qb-instagram { background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: white; }
+    .qb-phone { background: white; color: var(--pink-dark); }
+
+    .divider-text {
+      text-align: center;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      position: relative;
+    }
+    .divider-text::before, .divider-text::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 38%;
+      height: 1px;
+      background: rgba(255,255,255,0.15);
+    }
+    .divider-text::before { left: 0; }
+    .divider-text::after { right: 0; }
+
+    .order-note-bottom { color: rgba(255,255,255,0.5); font-size: 0.8rem; text-align: center; margin-top: 3rem; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--brown); color: rgba(255,255,255,0.8); padding: 3rem 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
     .footer-brand { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: white; }
     .footer-brand span { display: block; font-family: 'DM Sans', sans-serif; font-size: 0.78rem; color: var(--pink-mid); letter-spacing: 0.1em; margin-top: 0.2rem; }
     .footer-links { display: flex; gap: 1.5rem; list-style: none; }
@@ -379,28 +297,30 @@
     .footer-links a:hover { color: var(--pink-mid); }
     .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.4); }
 
-    /* ===== ANIMATIONS ===== */
+    /* ── ANIMATIONS ── */
     @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
     @keyframes floatChip { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-8px) rotate(2deg); } }
     .animate-on-scroll { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .animate-on-scroll.visible { opacity: 1; transform: none; }
 
-    /* ===== RESPONSIVE ===== */
+    /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       .hero { grid-template-columns: 1fr; text-align: center; gap: 3rem; padding-top: 90px; }
-      .hero-desc, .hero-cta { max-width: 100%; }
       .hero-tags, .hero-cta { justify-content: center; }
       .floating-chip { display: none; }
       .about-grid { grid-template-columns: 1fr; }
       .about-visual { order: -1; }
       .nav-links { display: none; }
+      .order-layout { grid-template-columns: 1fr; }
+      .order-form-box { order: 2; }
+      .order-quick-box { order: 1; }
     }
     @media (max-width: 600px) {
       section { padding: 60px 5%; }
       .menu-grid { grid-template-columns: 1fr 1fr; }
       .pillars { grid-template-columns: 1fr; }
-      .stats { gap: 1rem; }
+      .form-row { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -413,6 +333,7 @@
     <li><a href="#specialties">Why Us</a></li>
     <li><a href="#menu">Menu</a></li>
     <li><a href="#about">Our Story</a></li>
+    <li><a href="#reviews">Reviews</a></li>
     <li><a href="#order">Order</a></li>
   </ul>
   <a href="#order" class="nav-order">Order Now</a>
@@ -423,9 +344,7 @@
   <div class="hero-text">
     <div class="hero-badge">🌾 Pune's Beloved Home Bakery</div>
     <h1>Baked with <em>love,</em><br>made to <em>nourish.</em></h1>
-    <p class="hero-desc">
-      Handcrafted millet-based sweets, cakes, cookies and chocolates — 100% eggless, jaggery-sweetened, and made fresh from local ingredients. Every bite is honest.
-    </p>
+    <p class="hero-desc">Handcrafted millet-based sweets, cakes, cookies and chocolates — 100% eggless, jaggery-sweetened, and made fresh from local ingredients. Every bite is honest.</p>
     <div class="hero-tags">
       <span class="tag">🌱 100% Eggless</span>
       <span class="tag">🌾 Millet-based</span>
@@ -440,7 +359,8 @@
   </div>
   <div class="hero-visual">
     <div class="hero-logo-wrap">
-      <img src="Deliciozone_Logo-no-background.png" alt="Deliciozone" onerror="if(!this.dataset.errored){this.dataset.errored='1';this.style.display='none';var f=document.createElement('div');f.style.cssText='font-size:8rem;animation:float 4s ease-in-out infinite;';f.textContent='🍰';this.parentNode.appendChild(f);}" />
+      <img src="Deliciozone_Logo-no-background.png" alt="Deliciozone"
+        onerror="if(!this.dataset.errored){this.dataset.errored='1';this.style.display='none';var f=document.createElement('div');f.style.cssText='font-size:8rem;animation:float 4s ease-in-out infinite;';f.textContent='🍰';this.parentNode.appendChild(f);}" />
       <div class="floating-chip chip1">🍪 Fresh Baked to Order</div>
       <div class="floating-chip chip2">⭐ Always 5-Star Rated</div>
       <div class="floating-chip chip3">🌾 Millet Magic</div>
@@ -448,28 +368,13 @@
   </div>
 </section>
 
-<!-- STATS BAR -->
+<!-- STATS -->
 <div class="stats">
-  <div class="stat">
-    <div class="stat-num">100%</div>
-    <div class="stat-label">Eggless &amp; Vegetarian</div>
-  </div>
-  <div class="stat">
-    <div class="stat-num">5★</div>
-    <div class="stat-label">Customer Ratings</div>
-  </div>
-  <div class="stat">
-    <div class="stat-num">Zero</div>
-    <div class="stat-label">Artificial Preservatives</div>
-  </div>
-  <div class="stat">
-    <div class="stat-num">Fresh</div>
-    <div class="stat-label">Procured After Order</div>
-  </div>
-  <div class="stat">
-    <div class="stat-num">Small</div>
-    <div class="stat-label">Batches, Big Attention</div>
-  </div>
+  <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Eggless &amp; Vegetarian</div></div>
+  <div class="stat"><div class="stat-num">5★</div><div class="stat-label">Customer Ratings</div></div>
+  <div class="stat"><div class="stat-num">Zero</div><div class="stat-label">Artificial Preservatives</div></div>
+  <div class="stat"><div class="stat-num">Fresh</div><div class="stat-label">Procured After Order</div></div>
+  <div class="stat"><div class="stat-num">Small</div><div class="stat-label">Batches, Big Attention</div></div>
 </div>
 
 <!-- SPECIALTIES -->
@@ -483,37 +388,37 @@
     <div class="spec-card animate-on-scroll">
       <span class="spec-icon">🌾</span>
       <h3>Millet-Based Baking</h3>
-      <p>Our signature range uses millets — ragi, jowar, bajra — in place of maida. Lighter, more nutritious bakes with a taste that surprises even the biggest maida fans. Most customers say ours taste better.</p>
+      <p>Our signature range uses millets — ragi, jowar, bajra — in place of maida. Lighter, more nutritious, and most customers say ours taste better than regular maida bakes.</p>
       <span class="spec-highlight">Wheat-free · Maida-free</span>
     </div>
     <div class="spec-card animate-on-scroll">
       <span class="spec-icon">🩶</span>
       <h3>Diabetic-Friendly</h3>
-      <p>Our 100% sugar-free range uses monk fruit sugar — delivering the full sweetness and feel of real sugar without the glycaemic spike. Customers often genuinely can't tell the difference.</p>
+      <p>Our 100% sugar-free range uses monk fruit sugar — delivering the full sweetness and feel of real sugar without the glycaemic spike. Customers genuinely can't tell the difference.</p>
       <span class="spec-highlight">Monk fruit sweetened</span>
     </div>
     <div class="spec-card animate-on-scroll">
       <span class="spec-icon">🌿</span>
       <h3>Allergen-Conscious</h3>
-      <p>All bakes are eggless by principle. We also make dedicated gluten-free and nut-free variants — perfect for those managing food allergies without sacrificing flavour.</p>
+      <p>All bakes are eggless by principle. We also make dedicated gluten-free and nut-free variants — for those managing food allergies without sacrificing flavour.</p>
       <span class="spec-highlight">Gluten-free · Nut-free</span>
     </div>
     <div class="spec-card animate-on-scroll">
       <span class="spec-icon">🍫</span>
       <h3>Artisan Chocolates</h3>
-      <p>Dark, milk, and white chocolates — plain or center-filled. The fillings are self-crafted from fresh fruits and edible flowers into no-additive, no-preservative jellies and juices. Truly handmade.</p>
+      <p>Dark, milk, and white chocolates — plain or center-filled. The fillings are self-crafted from fresh fruits and edible flowers into no-additive jellies. Truly handmade.</p>
       <span class="spec-highlight">Fresh-filled · No additives</span>
     </div>
     <div class="spec-card animate-on-scroll">
       <span class="spec-icon">🔬</span>
       <h3>Sacred Proportions</h3>
-      <p>Every recipe followed to the gram, every single time. No shortcuts, no deviation. That's why our customers always get the exact same taste, texture, and flavour they fell in love with at the first bite.</p>
+      <p>Every recipe followed to the gram, every time. No shortcuts, no deviation. Customers always get the exact same taste and texture they fell in love with at the first bite.</p>
       <span class="spec-highlight">Consistent · Every batch</span>
     </div>
     <div class="spec-card animate-on-scroll">
       <span class="spec-icon">🏠</span>
       <h3>Home Kitchen Hygiene</h3>
-      <p>Made in our personal home kitchen — clean, controlled, and completely our own. No factory floors, no shared equipment. Ingredients are procured fresh only after your order is confirmed.</p>
+      <p>Made in our personal home kitchen — clean, controlled, completely our own. No factory floors, no shared equipment. Ingredients are procured fresh only after your order is confirmed.</p>
       <span class="spec-highlight">Fresh to order · Always</span>
     </div>
   </div>
@@ -526,7 +431,7 @@
       <div class="section-label">What We Bake</div>
       <h2 class="section-title">Our <em>Menu</em></h2>
     </div>
-    <p style="color: var(--brown-light); font-size: 0.88rem; max-width: 280px; text-align: right; line-height: 1.5;">Most items available in regular, millet, gluten-free, and sugar-free variants. Just ask!</p>
+    <p style="color:var(--brown-light);font-size:0.88rem;max-width:280px;text-align:right;line-height:1.5;">Most items available in millet, gluten-free, and sugar-free variants. Just ask!</p>
   </div>
   <div class="menu-tabs">
     <button class="menu-tab active" onclick="filterMenu('all',this)">All Products</button>
@@ -537,157 +442,188 @@
     <button class="menu-tab" onclick="filterMenu('other',this)">More Treats 🍮</button>
   </div>
   <div class="menu-grid" id="menuGrid">
+
     <div class="menu-card" data-cat="chocolates">
       <div class="menu-card-img">🍫</div>
       <div class="menu-card-body">
         <div class="menu-card-badges"><span class="badge badge-veg">Veg</span><span class="badge badge-sf">Sugar-free opt</span></div>
         <div class="menu-card-name">Dark Chocolates</div>
         <div class="menu-card-desc">Rich, smooth handcrafted dark chocolate — plain slab or center-filled with homemade fruit jellies.</div>
+        <a class="wa-product-btn" href="https://wa.me/919771017500?text=Hi%20Deliciozone!%20I%20would%20like%20to%20order%20Dark%20Chocolates.%20Please%20let%20me%20know%20the%20details." target="_blank">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Order on WhatsApp
+        </a>
       </div>
     </div>
+
     <div class="menu-card" data-cat="chocolates">
       <div class="menu-card-img">🍬</div>
       <div class="menu-card-body">
         <div class="menu-card-badges"><span class="badge badge-veg">Veg</span><span class="badge badge-sf">Sugar-free opt</span></div>
         <div class="menu-card-name">Milk &amp; White Chocolates</div>
         <div class="menu-card-desc">Creamy milk and delicate white chocolate, with fresh flower and fruit-filled centers.</div>
+        <a class="wa-product-btn" href="https://wa.me/919771017500?text=Hi%20Deliciozone!%20I%20would%20like%20to%20order%20Milk%20%26%20White%20Chocolates.%20Please%20let%20me%20know%20the%20details." target="_blank">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Order on WhatsApp
+        </a>
       </div>
     </div>
+
     <div class="menu-card" data-cat="bakes">
       <div class="menu-card-img">🧁</div>
       <div class="menu-card-body">
         <div class="menu-card-badges"><span class="badge badge-veg">Veg</span><span class="badge badge-gf">GF opt</span><span class="badge badge-wf">Wheat-free opt</span></div>
         <div class="menu-card-name">Millet Muffins</div>
         <div class="menu-card-desc">Fluffy, moist muffins made with millets and jaggery. Multiple flavours available each season.</div>
+        <a class="wa-product-btn" href="https://wa.me/919771017500?text=Hi%20Deliciozone!%20I%20would%20like%20to%20order%20Millet%20Muffins.%20Please%20let%20me%20know%20the%20details." target="_blank">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Order on WhatsApp
+        </a>
       </div>
     </div>
+
     <div class="menu-card" data-cat="bakes">
       <div class="menu-card-img">🍪</div>
       <div class="menu-card-body">
         <div class="menu-card-badges"><span class="badge badge-veg">Veg</span><span class="badge badge-gf">GF opt</span><span class="badge badge-sf">Sugar-free opt</span></div>
         <div class="menu-card-name">Cookies</div>
         <div class="menu-card-desc">Crisp, buttery cookies with consistent snap and flavour — available in millet and wheat-free variants too.</div>
+        <a class="wa-product-btn" href="https://wa.me/919771017500?text=Hi%20Deliciozone!%20I%20would%20like%20to%20order%20Cookies.%20Please%20let%20me%20know%20the%20details." target="_blank">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Order on WhatsApp
+        </a>
       </div>
     </div>
+
     <div class="menu-card" data-cat="cakes">
       <div class="menu-card-img">🎂</div>
       <div class="menu-card-body">
         <div class="menu-card-badges"><span class="badge badge-veg">Veg</span><span class="badge badge-gf">GF opt</span><span class="badge badge-nf">Nut-free opt</span></div>
         <div class="menu-card-name">Butter Cakes</div>
         <div class="menu-card-desc">Classic home-style butter cakes with exceptional crumb and flavour. Custom sizes and flavours on request.</div>
+        <a class="wa-product-btn" href="https://wa.me/919771017500?text=Hi%20Deliciozone!%20I%20would%20like%20to%20order%20a%20Butter%20Cake.%20Please%20let%20me%20know%20the%20details." target="_blank">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Order on WhatsApp
+        </a>
       </div>
     </div>
+
     <div class="menu-card" data-cat="cakes">
       <div class="menu-card-img">🍰</div>
       <div class="menu-card-body">
         <div class="menu-card-badges"><span class="badge badge-veg">Veg</span><span class="badge badge-wf">Wheat-free opt</span><span class="badge badge-sf">Sugar-free opt</span></div>
         <div class="menu-card-name">Millet Cakes</div>
         <div class="menu-card-desc">Celebration cakes reimagined with millets — you won't believe these are made without a gram of maida.</div>
+        <a class="wa-product-btn" href="https://wa.me/919771017500?text=Hi%20Deliciozone!%20I%20would%20like%20to%20order%20a%20Millet%20Cake.%20Please%20let%20me%20know%20the%20details." target="_blank">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Order on WhatsApp
+        </a>
       </div>
     </div>
+
     <div class="menu-card" data-cat="other">
       <div class="menu-card-img">🍮</div>
       <div class="menu-card-body">
         <div class="menu-card-badges"><span class="badge badge-veg">Veg</span><span class="badge badge-sf">Sugar-free opt</span></div>
         <div class="menu-card-name">Puddings</div>
         <div class="menu-card-desc">Silky, indulgent puddings made with wholesome dairy and natural sweeteners. Served chilled.</div>
+        <a class="wa-product-btn" href="https://wa.me/919771017500?text=Hi%20Deliciozone!%20I%20would%20like%20to%20order%20Puddings.%20Please%20let%20me%20know%20the%20details." target="_blank">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Order on WhatsApp
+        </a>
       </div>
     </div>
+
     <div class="menu-card" data-cat="other">
       <div class="menu-card-img">🍫</div>
       <div class="menu-card-body">
         <div class="menu-card-badges"><span class="badge badge-veg">Veg</span><span class="badge badge-sf">Sugar-free opt</span></div>
         <div class="menu-card-name">Brownies</div>
         <div class="menu-card-desc">Dense, fudgy brownies with that perfect crinkle top. Made with cold-pressed oils and pure butter.</div>
+        <a class="wa-product-btn" href="https://wa.me/919771017500?text=Hi%20Deliciozone!%20I%20would%20like%20to%20order%20Brownies.%20Please%20let%20me%20know%20the%20details." target="_blank">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Order on WhatsApp
+        </a>
       </div>
     </div>
+
     <div class="menu-card" data-cat="other">
       <div class="menu-card-img">🧁</div>
       <div class="menu-card-body">
         <div class="menu-card-badges"><span class="badge badge-veg">Veg</span></div>
         <div class="menu-card-name">Toppings &amp; Frostings</div>
         <div class="menu-card-desc">Handmade natural toppings, ganaches, and frostings — no artificial colours or flavours, ever.</div>
+        <a class="wa-product-btn" href="https://wa.me/919771017500?text=Hi%20Deliciozone!%20I%20would%20like%20to%20know%20more%20about%20your%20Toppings%20%26%20Frostings." target="_blank">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Order on WhatsApp
+        </a>
       </div>
     </div>
+
     <div class="menu-card" data-cat="breads">
       <div class="menu-card-img">🍞</div>
       <div class="menu-card-body">
         <div class="menu-card-badges"><span class="badge badge-veg">Veg</span></div>
         <div class="menu-card-name">Artisan Breads</div>
         <div class="menu-card-desc">Soft, aromatic breads baked fresh — free of additives, made with whole grain goodness.</div>
+        <a class="wa-product-btn" href="https://wa.me/919771017500?text=Hi%20Deliciozone!%20I%20would%20like%20to%20order%20Artisan%20Breads.%20Please%20let%20me%20know%20the%20details." target="_blank">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Order on WhatsApp
+        </a>
       </div>
     </div>
+
     <div class="menu-card" data-cat="breads">
       <div class="menu-card-img">🫓</div>
       <div class="menu-card-body">
         <div class="menu-card-badges"><span class="badge badge-veg">Veg</span></div>
         <div class="menu-card-name">Korean Buns</div>
         <div class="menu-card-desc">Fluffy, pillowy Korean-style buns with sweet or savoury fillings — a crowd favourite at every stall.</div>
+        <a class="wa-product-btn" href="https://wa.me/919771017500?text=Hi%20Deliciozone!%20I%20would%20like%20to%20order%20Korean%20Buns.%20Please%20let%20me%20know%20the%20details." target="_blank">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Order on WhatsApp
+        </a>
       </div>
     </div>
+
     <div class="menu-card" data-cat="breads">
       <div class="menu-card-img">🥐</div>
       <div class="menu-card-body">
         <div class="menu-card-badges"><span class="badge badge-veg">Veg</span><span class="badge badge-gf">GF opt</span></div>
         <div class="menu-card-name">Specialty Buns &amp; Rolls</div>
         <div class="menu-card-desc">Dinner rolls, tea-time buns and seasonal specials — baked in limited batches, always made to order.</div>
+        <a class="wa-product-btn" href="https://wa.me/919771017500?text=Hi%20Deliciozone!%20I%20would%20like%20to%20order%20Specialty%20Buns%20%26%20Rolls.%20Please%20let%20me%20know%20the%20details." target="_blank">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Order on WhatsApp
+        </a>
       </div>
     </div>
+
   </div>
-  <p style="text-align:center; margin-top:2.5rem; color:var(--brown-light); font-size:0.9rem; font-style:italic;">
+  <p style="text-align:center;margin-top:2.5rem;color:var(--brown-light);font-size:0.9rem;font-style:italic;">
     📦 All products made fresh to order · Custom quantities, gifting &amp; event orders welcome
   </p>
 </section>
 
-<!-- ABOUT / PILLARS -->
+<!-- ABOUT -->
 <section class="about-section" id="about">
   <div class="about-grid">
     <div class="about-text animate-on-scroll">
       <div class="section-label">Our Philosophy</div>
       <h2 class="section-title">Guided by <em>four pillars</em></h2>
-      <p class="section-sub" style="margin-bottom: 1.5rem;">
-        Deliciozone began because we were tired of overly processed, factory-made desserts. We wanted our food to feel good to eat while being gentle on the planet. Every choice we make is guided by four core pillars of sustainability.
-      </p>
+      <p class="section-sub">Deliciozone began because we were tired of overly processed, factory-made desserts. Every choice we make is guided by four core pillars of sustainability.</p>
       <div class="pillars">
-        <div class="pillar">
-          <div class="pillar-icon">🌱</div>
-          <h4>Environmental</h4>
-          <p>Millets need far less water to grow. We choose eggless, local, and seasonal to reduce our footprint.</p>
-        </div>
-        <div class="pillar">
-          <div class="pillar-icon">❤️</div>
-          <h4>Human</h4>
-          <p>Whole grains, organic jaggery, pure butter, cold-pressed oils — no artificial colours or preservatives.</p>
-        </div>
-        <div class="pillar">
-          <div class="pillar-icon">🤝</div>
-          <h4>Social</h4>
-          <p>We keep traditional millet ingredients and local farming practices alive and culturally relevant.</p>
-        </div>
-        <div class="pillar">
-          <div class="pillar-icon">💛</div>
-          <h4>Economic</h4>
-          <p>Local sourcing, small batches — supporting small producers, fair livelihoods, and zero unnecessary waste.</p>
-        </div>
+        <div class="pillar"><div class="pillar-icon">🌱</div><h4>Environmental</h4><p>Millets need far less water. We choose eggless, local, and seasonal to reduce our footprint.</p></div>
+        <div class="pillar"><div class="pillar-icon">❤️</div><h4>Human</h4><p>Whole grains, organic jaggery, pure butter, cold-pressed oils — no artificial colours or preservatives.</p></div>
+        <div class="pillar"><div class="pillar-icon">🤝</div><h4>Social</h4><p>We keep traditional millet ingredients and local farming practices alive and culturally relevant.</p></div>
+        <div class="pillar"><div class="pillar-icon">💛</div><h4>Economic</h4><p>Local sourcing, small batches — supporting small producers, fair livelihoods, zero unnecessary waste.</p></div>
       </div>
     </div>
     <div class="about-visual animate-on-scroll">
-      <div class="about-fact">
-        <div class="big">100%</div>
-        <small>Eggless — always, by conscious choice</small>
-      </div>
-      <div class="about-fact">
-        <div class="big">Zero</div>
-        <small>Artificial colours or preservatives, ever</small>
-      </div>
-      <div class="about-fact">
-        <div class="big">Fresh</div>
-        <small>Ingredients procured after your order</small>
-      </div>
-      <div class="about-fact">
-        <div class="big">5★</div>
-        <small>Consistent customer ratings for quality &amp; care</small>
-      </div>
+      <div class="about-fact"><div class="big">100%</div><small>Eggless — always, by conscious choice</small></div>
+      <div class="about-fact"><div class="big">Zero</div><small>Artificial colours or preservatives, ever</small></div>
+      <div class="about-fact"><div class="big">Fresh</div><small>Ingredients procured after your order</small></div>
+      <div class="about-fact"><div class="big">5★</div><small>Consistent customer ratings for quality &amp; care</small></div>
     </div>
   </div>
 </section>
@@ -698,6 +634,15 @@
     <div class="section-label">What Our Customers Say</div>
     <h2 class="section-title">Always <em>5 Stars</em></h2>
     <p class="section-sub">Rated 5 stars consistently for quality, taste, consistency, and the personal care that goes into every order.</p>
+  </div>
+  <div class="video-review-wrap animate-on-scroll">
+    <div class="video-label">⭐ Fresh from our stall — a customer shares their experience</div>
+    <div class="video-frame">
+      <video controls width="100%">
+        <source src="customer-review.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
   </div>
   <div class="testi-grid">
     <div class="testi-card animate-on-scroll">
@@ -721,36 +666,119 @@
 <!-- ORDER -->
 <section class="order-section" id="order">
   <div class="section-label">Place Your Order</div>
-  <h2 class="section-title">Let's get you some <em>goodness</em></h2>
-  <p class="section-sub">
-    We take orders via WhatsApp, Instagram DMs, or a quick phone call. Since we bake fresh to order using only the freshest ingredients, please place your order at least 24–48 hours in advance.
-  </p>
-  <div class="order-channels">
-    <a href="https://wa.me/919771017500" target="_blank" class="channel-btn ch-whatsapp">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-      WhatsApp Us
-    </a>
-    <a href="https://instagram.com/deliciozone" target="_blank" class="channel-btn ch-instagram">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-      Instagram DM
-    </a>
-    <a href="tel:+919771017500" class="channel-btn ch-phone">
-      📞 +91 97710 17500
-    </a>
+  <h2 class="section-title">How would you like to <em>order?</em></h2>
+  <p class="section-sub">Choose what works best for you — fill in the form and we'll get back to you, or reach us directly on WhatsApp right now. Either way, we bake fresh only after your order is confirmed.</p>
+
+  <div class="order-layout">
+
+    <!-- OPTION A: ORDER FORM -->
+    <div class="order-form-box animate-on-scroll">
+      <h3>📋 Send us an Order Request</h3>
+      <p class="form-sub">Fill in your details and we'll confirm your order within a few hours. Perfect for planned and bulk orders.</p>
+      <!-- Replace YOUR_FORM_ID below after signing up free at formspree.io -->
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your Name *</label>
+            <input type="text" id="name" name="name" placeholder="e.g. Priya Sharma" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">WhatsApp Number *</label>
+            <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="product">What would you like to order? *</label>
+          <select id="product" name="product" required>
+            <option value="" disabled selected>Select a product</option>
+            <option>Dark Chocolates</option>
+            <option>Milk &amp; White Chocolates</option>
+            <option>Millet Muffins</option>
+            <option>Cookies</option>
+            <option>Butter Cake</option>
+            <option>Millet Cake</option>
+            <option>Brownies</option>
+            <option>Puddings</option>
+            <option>Korean Buns</option>
+            <option>Artisan Breads</option>
+            <option>Specialty Buns &amp; Rolls</option>
+            <option>Mixed / Multiple items</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="quantity">Quantity / Serving Size</label>
+            <input type="text" id="quantity" name="quantity" placeholder="e.g. 1 box, 12 pieces" />
+          </div>
+          <div class="form-group">
+            <label for="date">Needed By Date *</label>
+            <input type="date" id="date" name="date" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="dietary">Dietary Requirements</label>
+          <select id="dietary" name="dietary">
+            <option value="Regular">Regular (standard recipe)</option>
+            <option value="Sugar-free (Monk Fruit)">Sugar-free — Monk fruit</option>
+            <option value="Gluten-free">Gluten-free</option>
+            <option value="Wheat-free / Millet only">Wheat-free / Millet only</option>
+            <option value="Nut-free">Nut-free</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="notes">Any special requests or notes?</label>
+          <textarea id="notes" name="notes" placeholder="Custom flavour, gifting message, delivery area, allergies..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send My Order Request 🍰</button>
+        <p class="form-note">We'll confirm via WhatsApp within a few hours · Please order at least 24–48 hrs in advance</p>
+      </form>
+    </div>
+
+    <!-- OPTION B: QUICK CONTACT -->
+    <div class="order-quick-box animate-on-scroll">
+      <div>
+        <h3>💬 Prefer to chat directly?</h3>
+        <p class="quick-sub">Reach us instantly on WhatsApp — just tap, and your preferred product message is pre-filled. We're usually very quick to respond!</p>
+      </div>
+      <a href="https://wa.me/919771017500?text=Hi%20Deliciozone!%20I%20would%20like%20to%20place%20an%20order.%20Could%20you%20please%20help%20me?" target="_blank" class="quick-btn qb-whatsapp">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        <div>
+          WhatsApp Us Now
+          <span class="quick-btn-label">Opens WhatsApp with your message ready</span>
+        </div>
+      </a>
+      <div class="divider-text">or</div>
+      <a href="https://instagram.com/deliciozone" target="_blank" class="quick-btn qb-instagram">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        <div>
+          DM on Instagram
+          <span class="quick-btn-label">@deliciozone</span>
+        </div>
+      </a>
+      <div class="divider-text">or</div>
+      <a href="tel:+919771017500" class="quick-btn qb-phone">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        <div>
+          Call Us Directly
+          <span class="quick-btn-label">+91 97710 17500</span>
+        </div>
+      </a>
+      <p style="color:rgba(255,255,255,0.5);font-size:0.8rem;line-height:1.6;margin-top:0.5rem;">
+        📍 Serving Pune · Please order at least 24–48 hrs in advance · Gifting &amp; bulk orders warmly welcomed
+      </p>
+    </div>
+
   </div>
-  <p class="order-note">📍 Serving Pune &nbsp;·&nbsp; @deliciozone on Instagram &nbsp;·&nbsp; Custom gifting &amp; event orders warmly welcomed</p>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-brand">
-    Deliciozone
-    <span>Handmade With Love · Pune</span>
-  </div>
+  <div class="footer-brand">Deliciozone <span>Handmade With Love · Pune</span></div>
   <ul class="footer-links">
     <li><a href="#specialties">Why Us</a></li>
     <li><a href="#menu">Menu</a></li>
     <li><a href="#about">Our Story</a></li>
+    <li><a href="#reviews">Reviews</a></li>
     <li><a href="#order">Order</a></li>
   </ul>
   <div class="footer-copy">© 2025 Deliciozone · All rights reserved</div>
